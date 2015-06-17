@@ -1,0 +1,38 @@
+{
+  "name": "simple-message-helper",
+  "description": "Provides a simple interface for a single-exchange, single-queue message pattern",
+  "version": "0.1.0",
+  "author": {
+    "name": "Israel Shirk",
+    "email": "israelshirk@github.com"
+  },
+  "license": "GPL",
+  "keywords": [
+    "amqp",
+    "message queue"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/israelshirk/simple-message-helper"
+  },
+  "bugs": {
+    "url": "https://github.com/israelshirk/simple-message-helper/issues"
+  },
+  "dependencies": {
+    "amqp": "*",
+    "q": "^1.4.1",
+    "coffee-script": "*"
+  },
+  "devDependencies": {
+    "jasmine-node": "mhevery/jasmine-node#Jasmine2.0"
+  },
+  "scripts": {
+    "test": "node_modules/jasmine-node/bin/jasmine-node --coffee spec"
+  },
+  "maintainers": [
+    {
+      "name": "israelshirk",
+      "email": "israelshirk@gmail.com"
+    }
+  ]
+}
