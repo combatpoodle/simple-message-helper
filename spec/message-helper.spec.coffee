@@ -160,7 +160,7 @@ describe 'message-helper', ->
     process.env.HUBOT_AMQP_RESPONSE_EXCHANGE_NAME = "amqp_response_exchange_name"
     process.env.HUBOT_AMQP_RESPONSE_QUEUE_NAME = "amqp_response_queue_name"
 
-    expectedConnectionInfo = { login : 'guest', password : 'amqp_password', host : 'amqp_host', port : 'amqp_port', vhost : 'amqp_vhost' }
+    expectedConnectionInfo = { login : 'amqp_user', password : 'amqp_password', host : 'amqp_host', port : 'amqp_port', vhost : 'amqp_vhost' }
 
     exchanges = {
       "amqp_command_exchange_name": "hubot-commands",
