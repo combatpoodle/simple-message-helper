@@ -12,7 +12,7 @@ module.exports = (amqp) ->
             @_readyFn = readyFn
             @_callbackFn = callbackFn
             @_errbackFn = errbackFn
-            @_readyProperties = 
+            @_readyProperties =
                 exchange: false
                 queue: false
 
@@ -25,7 +25,7 @@ module.exports = (amqp) ->
             @_cleanShutdown = false
 
             @_connectionInfo =
-                login: "guest"
+                user: "guest"
                 password: "guest"
                 host: "127.0.0.1"
                 port: "5672"
@@ -35,36 +35,36 @@ module.exports = (amqp) ->
                 responseExchangeName: "hubot-responses"
                 responseQueueName: "hubot-responses"
 
-            if process.env.AMQP_USER
-                @_connectionInfo.user = process.env.AMQP_USER
+            if process.env.HUBOT_AMQP_USER
+                @_connectionInfo.user = process.env.HUBOT_AMQP_USER
 
-            if process.env.AMQP_PASSWORD
-                @_connectionInfo.password = process.env.AMQP_PASSWORD
+            if process.env.HUBOT_AMQP_PASSWORD
+                @_connectionInfo.password = process.env.HUBOT_AMQP_PASSWORD
 
-            if process.env.AMQP_HOST
-                @_connectionInfo.host = process.env.AMQP_HOST
+            if process.env.HUBOT_AMQP_HOST
+                @_connectionInfo.host = process.env.HUBOT_AMQP_HOST
 
-            if process.env.AMQP_PORT
-                @_connectionInfo.port = process.env.AMQP_PORT
+            if process.env.HUBOT_AMQP_PORT
+                @_connectionInfo.port = process.env.HUBOT_AMQP_PORT
 
-            if process.env.AMQP_VHOST
-                @_connectionInfo.vhost = process.env.AMQP_VHOST
+            if process.env.HUBOT_AMQP_VHOST
+                @_connectionInfo.vhost = process.env.HUBOT_AMQP_VHOST
 
-            if process.env.AMQP_COMMAND_EXCHANGE_NAME
-                @_connectionInfo.commandExchangeName = process.env.AMQP_COMMAND_EXCHANGE_NAME
+            if process.env.HUBOT_AMQP_COMMAND_EXCHANGE_NAME
+                @_connectionInfo.commandExchangeName = process.env.HUBOT_AMQP_COMMAND_EXCHANGE_NAME
 
-            if process.env.AMQP_COMMAND_ROUTING_KEY
-                @_connectionInfo.commandRoutingKey = process.env.AMQP_COMMAND_ROUTING_KEY
+            if process.env.HUBOT_AMQP_COMMAND_ROUTING_KEY
+                @_connectionInfo.commandRoutingKey = process.env.HUBOT_AMQP_COMMAND_ROUTING_KEY
 
-            if process.env.AMQP_RESPONSE_EXCHANGE_NAME
-                @_connectionInfo.responseExchangeName = process.env.AMQP_RESPONSE_EXCHANGE_NAME
+            if process.env.HUBOT_AMQP_RESPONSE_EXCHANGE_NAME
+                @_connectionInfo.responseExchangeName = process.env.HUBOT_AMQP_RESPONSE_EXCHANGE_NAME
 
-            if process.env.AMQP_RESPONSE_QUEUE_NAME
-                @_connectionInfo.responseQueueName = process.env.AMQP_RESPONSE_QUEUE_NAME
+            if process.env.HUBOT_AMQP_RESPONSE_QUEUE_NAME
+                @_connectionInfo.responseQueueName = process.env.HUBOT_AMQP_RESPONSE_QUEUE_NAME
 
         _connect: ->
             connectionInfo = {
-                login: @_connectionInfo.login,
+                login: @_connectionInfo.user,
                 password: @_connectionInfo.password,
                 host: @_connectionInfo.host,
                 port: @_connectionInfo.port,

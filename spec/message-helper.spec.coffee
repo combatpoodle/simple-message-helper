@@ -17,7 +17,7 @@ describe 'message-helper', ->
 
     process.env = {}
 
-    amqp = 
+    amqp =
       createConnection: (connectionInfo) ->
         return connection
 
@@ -150,15 +150,15 @@ describe 'message-helper', ->
         done()
 
   it 'uses environmental variables for connection info', ->
-    process.env.AMQP_USER = "amqp_user"
-    process.env.AMQP_PASSWORD = "amqp_password"
-    process.env.AMQP_HOST = "amqp_host"
-    process.env.AMQP_PORT = "amqp_port"
-    process.env.AMQP_VHOST = "amqp_vhost"
-    process.env.AMQP_COMMAND_EXCHANGE_NAME = "amqp_command_exchange_name"
-    process.env.AMQP_COMMAND_ROUTING_KEY = "amqp_command_routing_key"
-    process.env.AMQP_RESPONSE_EXCHANGE_NAME = "amqp_response_exchange_name"
-    process.env.AMQP_RESPONSE_QUEUE_NAME = "amqp_response_queue_name"
+    process.env.HUBOT_AMQP_USER = "amqp_user"
+    process.env.HUBOT_AMQP_PASSWORD = "amqp_password"
+    process.env.HUBOT_AMQP_HOST = "amqp_host"
+    process.env.HUBOT_AMQP_PORT = "amqp_port"
+    process.env.HUBOT_AMQP_VHOST = "amqp_vhost"
+    process.env.HUBOT_AMQP_COMMAND_EXCHANGE_NAME = "amqp_command_exchange_name"
+    process.env.HUBOT_AMQP_COMMAND_ROUTING_KEY = "amqp_command_routing_key"
+    process.env.HUBOT_AMQP_RESPONSE_EXCHANGE_NAME = "amqp_response_exchange_name"
+    process.env.HUBOT_AMQP_RESPONSE_QUEUE_NAME = "amqp_response_queue_name"
 
     expectedConnectionInfo = { login : 'guest', password : 'amqp_password', host : 'amqp_host', port : 'amqp_port', vhost : 'amqp_vhost' }
 

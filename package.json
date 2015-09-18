@@ -1,5 +1,5 @@
 {
-  "name": "simple-message-helper",
+  "name": "message-helper",
   "description": "Provides a simple interface for a single-exchange, single-queue message pattern",
   "version": "0.1.0",
   "author": {
@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/israelshirk/simple-message-helper"
+    "url": "git://github.com/israelshirk/message-helper"
   },
   "bugs": {
-    "url": "https://github.com/israelshirk/simple-message-helper/issues"
+    "url": "https://github.com/israelshirk/message-helper/issues"
   },
   "dependencies": {
     "amqp": "*",
